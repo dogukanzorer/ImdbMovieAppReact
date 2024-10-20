@@ -1,12 +1,21 @@
-import { useState } from 'react'
 import './App.css'
+import Navbar from './components/Navbar/Navbar'
+import {Routes,Route} from 'react-router-dom'
+import Home from './Pages/Home/Home'
+import MyList from './Pages/Mylist/MyList'
+
+import {HOME,MY_LIST} from './constants/path'
 
 function App() {
   
   return (
-    <>
-    Merhaba
-    </>
+    <div className='app'>
+    <Navbar/>
+    <Routes>
+      <Route path={HOME} element={<Home/>}/>
+      <Route path={MY_LIST} element={<MyList/>}/>
+    </Routes>
+    </div>
   )
 }
 
